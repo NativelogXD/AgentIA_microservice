@@ -1,0 +1,22 @@
+FROM python:3.12-slim
+
+# Instalar dependencias mínimas del sistema
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
+# Definir directorio de trabajo
+WORKDIR /app
+
+# Copiar requirements desde la raíz
+COPY requirements.txt .
+
+# Instalar dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar toda la estructura de la aplicación
+COPY app/ ./app/
+
+# Exponer puerto de la API
+EXPOSE 5000
+
+# Arrancar con Gunicorn usando el módulo completo
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app.api.api:app"]

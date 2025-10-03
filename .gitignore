@@ -1,0 +1,33 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+*.env
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test & coverage
+.pytest_cache/
+.coverage*
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+
+# Optional: UV cache
+.uv/

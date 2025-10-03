@@ -1,0 +1,20 @@
+# Imagen base ligera con Python
+FROM python:3.12-slim
+
+# Instalar dependencias básicas de sistema
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
+# Directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiar dependencias desde la raíz
+COPY requirements.txt .
+
+# Instalar dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar toda la estructura de la aplicación
+COPY app/ ./app/
+
+# Comando por defecto usando el módulo completo
+CMD ["python", "-m", "app.client.client_mcp", "cuántos aviones hay?"]

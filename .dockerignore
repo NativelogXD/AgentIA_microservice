@@ -1,0 +1,48 @@
+# Archivos y directorios a excluir del contexto de Docker
+
+# Entorno virtual Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Archivos de desarrollo
+.env
+.env.local
+.env.*.local
+*.log
+.pytest_cache/
+.coverage
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentación
+README.md
+*.md
+
+# Archivos de lock específicos del sistema
+uv.lock
+
+# Archivos de base de datos local
+*.db
+*.sqlite
+
+# Archivos de configuración local
+docker-compose.yml
+docker-compose.*.yml
